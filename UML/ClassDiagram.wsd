@@ -1,0 +1,167 @@
+@startuml ClassDiagram
+
+class MonopolyJunior {
+    {static} + main(args: String[]): void
+}
+
+class Account {
+    - cash: int
+    + Account()
+    + addCash(cash: int): void
+    + getCash(): int
+}
+
+class Bankruptcy {
+    {static} - boolean bankruptcy
+    {static} + getBankruptcy(): boolean
+    {static} + setBankruptcy(): void
+}
+
+class Board {
+    {static} - board: Player[]
+
+    {static} + updateBoard(): void
+}
+
+class Dice {
+    {static} + rollDice(): int
+}
+
+package Languages.java {
+    class Languages {
+        {static} + language: int
+        {static} - english: Language
+        {static} - danish: Language
+        {static} - languages: Language[]
+        {static} + getLanguage(index: LanguageIndex): String
+        {static} + selectLanguage(): void
+    }
+
+    interface Language <<@FunctionalInterface>> {
+        + LanguageOutput(index: LanguageIndex): String
+    }
+
+    enum LanguageIndex {
+        PLAYER_NUM
+        PLAYER_ROLE
+        PLAYER_NAME
+        PLAYER_TO_STRING_1
+        PLAYER_TO_STRING_2
+    }
+}
+
+class LineReader {
+    {static} - scanner: Scanner
+    {static} + nextLine(): String
+    {static} + nextInt(): int
+    {static} + close(): void
+}
+
+package Player.java {
+    class Player {
+        - name: String
+        - account: Account
+        - wins: int
+        - position: int
+        - role: Role
+        + Player(name: String, role: Role)
+        + getName(): String
+        + getWins(): int
+        + getCash(): int
+        + getPosition(): int
+        + toString(): String
+        + toStringFull(): String
+        + wins(): void
+        + move(move: int): void
+        + addCash(cash: int): void
+    }
+
+    enum Role {
+        CAR
+        SHIP
+        CAT
+        DOG
+    }
+}
+
+class PlayerController {
+    {static} - numPlayers: int
+    {static} - currentPlayer: Player
+    {static} - car: Player
+    {static} - ship: Player
+    {static} - dog: Player
+    {static} - cat: Player
+    {static} - players: Player[]
+    {static} + createPlayers(): void
+    {static} + updateCurrentPlayer(): void
+    {static} + getCar(): Player
+    {static} + getShip(): Player
+    {static} + getDog(): Player
+    {static} + getCat(): Player
+    {static} + getCurrentPlayer(): Player
+    {static} + getPlayers(): Player[]
+    {static} - generatePlayer(n: int): Player
+    {static} - getName(): String
+}
+
+class RecordKeeper {
+    {static} + getWins(player: Player): int
+    {static} + recordGame(p1: Player, p2: Player): void
+}
+
+class TileActivity {
+    PLACEHOLDER
+}
+
+package Turn.java {
+    class Turn {
+        {static} + runTurn(player: Player): void
+    }
+
+    enum Tile {
+        START
+        BURGER_SHOP
+        PIZZERIA
+        CHANCE_ONE
+        CANDY_SHOP
+        ICE_CREAM_SHOP
+        JAIL
+        MUSEUM
+        LIBRARY
+        CHANCE_TWO
+        SKATE_PARK
+        SWIMMING_POOL
+        FREE_PARKING
+        ARCADE
+        CINEMA
+        CHANCE_THREE
+        TOY_SHOP
+        GO_TO_JAIL
+        BOWLING_ALLEY
+        ZOO
+        CHANCE_FOUR
+        WATER_PARK
+        BEACH_PROMENADE
+    }
+}
+
+Languages <-- MonopolyJunior
+Language --* Languages
+Languages -- LanguageIndex
+LineReader <-- Languages
+MonopolyJunior --> PlayerController
+Languages <-- PlayerController
+LineReader <-- PlayerController
+PlayerController --> Player
+Role - Player
+MonopolyJunior --> Board
+Board -> PlayerController
+Player *- Account
+Turn <-- MonopolyJunior
+Tile - Turn
+Turn --> Dice
+Player --> RecordKeeper
+TileActivity <-- Turn
+Bankruptcy <- MonopolyJunior
+
+@enduml
