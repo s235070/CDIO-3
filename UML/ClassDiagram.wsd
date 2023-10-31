@@ -47,6 +47,33 @@ package Languages.java {
         PLAYER_NAME
         PLAYER_TO_STRING_1
         PLAYER_TO_STRING_2
+        BOUGHT_PROPERTY
+        PAID_RENT
+        LANDED
+        START
+        BURGER_SHOP
+        PIZZERIA
+        CHANCE_ONE
+        CANDY_SHOP
+        ICE_CREAM_SHOP
+        JAIL
+        MUSEUM
+        LIBRARY
+        CHANCE_TWO
+        SKATE_PARK
+        SWIMMING_POOL
+        FREE_PARKING
+        ARCADE
+        CINEMA
+        CHANCE_THREE
+        TOY_SHOP
+        PET_SHOP
+        GO_TO_JAIL
+        BOWLING_ALLEY
+        ZOO
+        CHANCE_FOUR
+        WATER_PARK
+        BEACH_PROMENADE
     }
 }
 
@@ -74,6 +101,7 @@ package Player.java {
         + wins(): void
         + move(move: int): void
         + addCash(cash: int): void
+        + pay(cash: int, recipient: Player): void
     }
 
     enum Role {
@@ -109,8 +137,37 @@ class RecordKeeper {
     {static} + recordGame(p1: Player, p2: Player): void
 }
 
-class TileActivity {
-    PLACEHOLDER
+package TileActivity.java {
+    class TileActivity {
+        {static} - owners: Player[]
+        {static} - start: Activity
+        {static} - jail: Activity
+        {static} - freeParking: Activity
+        {static} - goToJail: Activity
+        {static} - chance: Activity
+        {static} - burgerShop: Activity
+        {static} - pizzeria: Activity
+        {static} - candyShop: Activity
+        {static} - iceCreamShop: Activity
+        {static} - jail: Activity
+        {static} - museum: Activity
+        {static} - library: Activity
+        {static} - skatePark: Activity
+        {static} - swimmingPool: Activity
+        {static} - arcade: Activity
+        {static} - cinema: Activity
+        {static} - toyShop: Activity
+        {static} - bowlingAlley: Activity
+        {static} - zoo: Activity
+        {static} - waterPark: Activity
+        {static} - beachPromenade: Activity
+        {static} - activities: Activity[]
+        {static} + runTile(tile: Tile): void
+    }
+
+    interface Activity <<@FunctionalInterface>> {
+        + runActivity(tile: Tile): void
+    }
 }
 
 package Turn.java {
@@ -136,6 +193,7 @@ package Turn.java {
         CINEMA
         CHANCE_THREE
         TOY_SHOP
+        PET_SHOP
         GO_TO_JAIL
         BOWLING_ALLEY
         ZOO
@@ -147,21 +205,25 @@ package Turn.java {
 
 Languages <-- MonopolyJunior
 Language --* Languages
-Languages -- LanguageIndex
-LineReader <-- Languages
+Languages -l- LanguageIndex
+Languages -d-> LineReader
 MonopolyJunior --> PlayerController
 Languages <-- PlayerController
 LineReader <-- PlayerController
 PlayerController --> Player
-Role - Player
-MonopolyJunior --> Board
-Board -> PlayerController
+Player -l- Role
+MonopolyJunior -l-> Board
+PlayerController <-r- Board
 Player *- Account
 Turn <-- MonopolyJunior
-Tile - Turn
-Turn --> Dice
+Turn -r- Tile
+Turn -d-> Dice
 Player --> RecordKeeper
 TileActivity <-- Turn
-Bankruptcy <- MonopolyJunior
+MonopolyJunior -r-> Bankruptcy
+Activity -d-* TileActivity
+Account -u-> Bankruptcy
+TileActivity --> Tile
+TileActivity -l-> Languages
 
 @enduml

@@ -26,6 +26,7 @@ enum Tile {
     CINEMA,
     CHANCE_THREE,
     TOY_SHOP,
+    PET_SHOP,
     GO_TO_JAIL,
     BOWLING_ALLEY,
     ZOO,

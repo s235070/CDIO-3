@@ -63,7 +63,7 @@ class PlayerController {
         return players;
     }
 
-    static Player generatePlayer(int n) {
+    private static Player generatePlayer(int n) {
         System.out.println("P" + n + Languages.getLanguage(LanguageIndex.PLAYER_ROLE));
         while (true) {
             String line = LineReader.nextLine();

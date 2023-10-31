@@ -50,8 +50,16 @@ public class Player {
         }
     }
 
-    public void addCash(int cash) {
-        this.account.addCash(cash);;
+    public boolean addCash(int cash) {
+        return this.account.addCash(cash);
+    }
+
+    public void pay(int cash, Player recipient) {
+        for (int i = 0; i < cash; i++) {
+            if (this.addCash(-1)) {
+                recipient.addCash(1);
+            }
+        }
     }
 }
 
