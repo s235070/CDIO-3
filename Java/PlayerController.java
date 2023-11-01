@@ -32,7 +32,10 @@ class PlayerController {
         } else {
             for (int i = 0; i < players.length; i++) {
                 if (players[i] == currentPlayer) {
-                    currentPlayer = players[++i];
+                    if (i + 1 < players.length)
+                        currentPlayer = players[++i];
+                    else
+                        currentPlayer = players[0];
                     return;
                 }
             }
@@ -56,7 +59,7 @@ class PlayerController {
     }
 
     public static Player getCurrentPlayer() {
-        return currentPlayer;
+        return Optional.ofNullable(currentPlayer).orElse(players[0]);
     }
 
     public static Player[] getPlayers() {
