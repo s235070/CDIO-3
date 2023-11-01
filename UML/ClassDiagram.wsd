@@ -213,8 +213,8 @@ LineReader <-- PlayerController
 PlayerController --> Player
 Player -l- Role
 MonopolyJunior -l-> Board
-PlayerController <-r- Board
-Player *- Account
+PlayerController <-d- Board
+Player *-l- Account
 Turn <-- MonopolyJunior
 Turn -r- Tile
 Turn -d-> Dice
@@ -222,7 +222,7 @@ Player --> RecordKeeper
 TileActivity <-- Turn
 MonopolyJunior -d-> Bankruptcy
 Activity -d-* TileActivity
-Account -d-> Bankruptcy
+Account -u-> Bankruptcy
 TileActivity --> Tile
 TileActivity -l-> Languages
 
