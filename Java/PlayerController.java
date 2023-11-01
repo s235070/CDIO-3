@@ -1,3 +1,5 @@
+import java.util.Optional;
+
 class PlayerController {
     static int numPlayers;
     static Player currentPlayer, car, ship, dog, cat;
@@ -64,6 +66,15 @@ class PlayerController {
 
     public static Player[] getPlayers() {
         return players;
+    }
+
+    public static Player getRichest() {
+        Player richest = players[0];
+        for (int i = 0; i < players.length; i++) {
+            if (players[i].getCash() > richest.getCash())
+                richest = players[i];
+        }
+        return richest;
     }
 
     private static Player generatePlayer(int n) {

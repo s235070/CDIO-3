@@ -74,6 +74,7 @@ package Languages.java {
         CHANCE_FOUR
         WATER_PARK
         BEACH_PROMENADE
+        END
     }
 }
 
@@ -128,6 +129,7 @@ class PlayerController {
     {static} + getCat(): Player
     {static} + getCurrentPlayer(): Player
     {static} + getPlayers(): Player[]
+    {static} + getRichest(): Player
     {static} - generatePlayer(n: int): Player
     {static} - getName(): String
 }
@@ -203,6 +205,10 @@ package Turn.java {
     }
 }
 
+class End {
+    {static} - end(): void
+}
+
 Languages <-- MonopolyJunior
 Language --* Languages
 Languages -l- LanguageIndex
@@ -211,7 +217,7 @@ MonopolyJunior --> PlayerController
 Languages <-- PlayerController
 LineReader <-- PlayerController
 PlayerController --> Player
-Player -l- Role
+Player -r- Role
 MonopolyJunior -l-> Board
 PlayerController <-d- Board
 Player *-l- Account
@@ -220,10 +226,13 @@ Turn -r- Tile
 Turn -d-> Dice
 Player --> RecordKeeper
 TileActivity <-- Turn
-MonopolyJunior -d-> Bankruptcy
+MonopolyJunior -r-> Bankruptcy
 Activity -d-* TileActivity
 Account -u-> Bankruptcy
 TileActivity --> Tile
 TileActivity -l-> Languages
+MonopolyJunior -u-> End
+End -u-> PlayerController
+End -u-> Languages
 
 @enduml

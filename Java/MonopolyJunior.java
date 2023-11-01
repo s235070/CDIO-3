@@ -8,5 +8,7 @@ class MonopolyJunior {
             PlayerController.updateCurrentPlayer();
             Turn.runTurn(PlayerController.getCurrentPlayer());
         } while(!Bankruptcy.getBankruptcy());
+
+        End.end();
     }
 }

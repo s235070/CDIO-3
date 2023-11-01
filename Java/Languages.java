@@ -55,6 +55,8 @@ public class Languages {
                 return "WATER_PARK_EN";
             case BEACH_PROMENADE:
                 return "BEACH_PROMENADE_EN";
+            case END:
+                return "END_EN";
             default:
                 return "INDEX_OUT_OF_RANGE_EN";
         }
@@ -114,6 +116,8 @@ public class Languages {
                 return "WATER_PARK_DA";
             case BEACH_PROMENADE:
                 return "BEACH_PROMENADE_DA";
+            case END:
+                return "END_DA";
             default:
                 return "INDEX_OUT_OF_RANGE_DA";
         }
@@ -180,5 +184,7 @@ enum LanguageIndex {
     BOWLING_ALLEY,
     ZOO,
     WATER_PARK,
-    BEACH_PROMENADE;
+    BEACH_PROMENADE,
+    //End.java
+    END; // Shown when game ends
 }
