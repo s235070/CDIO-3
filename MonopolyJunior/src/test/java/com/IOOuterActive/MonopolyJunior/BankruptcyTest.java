@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class Test1 {
+public class BankruptcyTest {
     @Test
     @DisplayName("Bankruptcy initialization")
     void testGetBankruptcy() {
