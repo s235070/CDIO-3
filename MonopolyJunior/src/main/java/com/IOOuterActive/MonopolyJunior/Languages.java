@@ -61,8 +61,10 @@ public class Languages {
                 return "BEACH_PROMENADE_EN";
             case END:
                 return "END_EN";
+            case DEBUG_OUTPUT:
+                return "DEBUG_OUTPUT_EN";       // DO NOT CHANGE THIS LINE
             default:
-                return "INDEX_OUT_OF_RANGE_EN";
+                return "INDEX_OUT_OF_RANGE_EN"; //DO NOT CHANGE THIS LINE
         }
     };
 
@@ -124,8 +126,10 @@ public class Languages {
                 return "BEACH_PROMENADE_DA";
             case END:
                 return "END_DA";
+            case DEBUG_OUTPUT:
+                return "DEBUG_OUTPUT_DA";       // DO NOT CHANGE THIS LINE
             default:
-                return "INDEX_OUT_OF_RANGE_DA";
+                return "INDEX_OUT_OF_RANGE_DA"; // DO NOT CHANGE THIS LINE
         }
     };
     
@@ -192,5 +196,8 @@ enum LanguageIndex {
     WATER_PARK,
     BEACH_PROMENADE,
     //End.java
-    END; // Shown when game ends
+    END, // Shown when game ends
+    //DEBUG INDICES DO NOT USE
+    DEBUG_OUTPUT,
+    ALWAYS_OUT_OF_RANGE;
 }
