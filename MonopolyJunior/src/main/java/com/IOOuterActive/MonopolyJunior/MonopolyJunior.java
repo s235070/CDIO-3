@@ -6,6 +6,7 @@ class MonopolyJunior {
         PlayerController.createPlayers();
 
         do {
+            BoardUI.displayBoard();
             PlayerController.updateCurrentPlayer();
             Turn.runTurn(PlayerController.getCurrentPlayer());
         } while(!Bankruptcy.getBankruptcy());

@@ -6,6 +6,7 @@ class PlayerController {
     static int numPlayers;
     static Player currentPlayer, car, ship, dog, cat;
     static Player[] players;
+    static public Player[] owners = new Player[24];
 
     public static void createPlayers() {
         System.out.println(Languages.getLanguage(LanguageIndex.PLAYER_NUM));

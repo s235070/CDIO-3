@@ -59,6 +59,8 @@ public class Languages {
                 return "WATER_PARK_EN";
             case BEACH_PROMENADE:
                 return "BEACH_PROMENADE_EN";
+            case OWNER:
+                return "OWNER_EN";
             case END:
                 return "END_EN";
             case DEBUG_OUTPUT:
@@ -124,6 +126,8 @@ public class Languages {
                 return "WATER_PARK_DA";
             case BEACH_PROMENADE:
                 return "BEACH_PROMENADE_DA";
+            case OWNER:
+                return "OWNER_DA";
             case END:
                 return "END_DA";
             case DEBUG_OUTPUT:
@@ -195,6 +199,8 @@ enum LanguageIndex {
     ZOO,
     WATER_PARK,
     BEACH_PROMENADE,
+    //BoardUI.java
+    OWNER,
     //End.java
     END, // Shown when game ends
     //DEBUG INDICES DO NOT USE
