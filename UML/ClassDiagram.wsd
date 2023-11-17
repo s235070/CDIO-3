@@ -17,12 +17,6 @@ class Bankruptcy {
     {static} + setBankruptcy(): void
 }
 
-class Board {
-    {static} - board: Player[]
-
-    {static} + updateBoard(): void
-}
-
 class Dice {
     {static} + rollDice(): int
 }
@@ -74,7 +68,10 @@ package Languages.java {
         CHANCE_FOUR
         WATER_PARK
         BEACH_PROMENADE
+        OWNER
         END
+        DEBUG_OUTPUT
+        ALWAYS_OUT_OF_RANGE
     }
 }
 
@@ -114,6 +111,7 @@ package Player.java {
 }
 
 class PlayerController {
+    {static} - owners: Player[]
     {static} - numPlayers: int
     {static} - currentPlayer: Player
     {static} - car: Player
@@ -141,7 +139,6 @@ class RecordKeeper {
 
 package TileActivity.java {
     class TileActivity {
-        {static} - owners: Player[]
         {static} - start: Activity
         {static} - jail: Activity
         {static} - freeParking: Activity
@@ -209,6 +206,10 @@ class End {
     {static} - end(): void
 }
 
+class BoardUI {
+    {static} + displayBoard(): void
+}
+
 Languages <-- MonopolyJunior
 Language --* Languages
 Languages -l- LanguageIndex
@@ -217,16 +218,14 @@ MonopolyJunior --> PlayerController
 Languages <-- PlayerController
 LineReader <-- PlayerController
 PlayerController --> Player
-Player -r- Role
-MonopolyJunior -l-> Board
-PlayerController <-d- Board
+Player -l- Role
 Player *-l- Account
 Turn <-- MonopolyJunior
 Turn -r- Tile
 Turn -d-> Dice
 Player --> RecordKeeper
 TileActivity <-- Turn
-MonopolyJunior -r-> Bankruptcy
+MonopolyJunior --> Bankruptcy
 Activity -d-* TileActivity
 Account -u-> Bankruptcy
 TileActivity --> Tile
@@ -234,5 +233,8 @@ TileActivity -l-> Languages
 MonopolyJunior -u-> End
 End -u-> PlayerController
 End -u-> Languages
+MonopolyJunior -r-> BoardUI
+BoardUI -u-> PlayerController
+BoardUI -u-> Languages
 
 @enduml
