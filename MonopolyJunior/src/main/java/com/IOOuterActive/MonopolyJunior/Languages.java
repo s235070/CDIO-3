@@ -6,63 +6,67 @@ public class Languages {
     static Language english = index -> {
         switch(index) {
             case PLAYER_NUM:
-                return "PLAYER_NUM_EN";
+                return "Number of players? (2, 3, 4)";
             case PLAYER_ROLE:
-                return "PLAYER_ROLE_EN";
+                return " Pick a role (Car, Dog, Cat, Ship)";
             case PLAYER_NAME:
-                return "PLAYER_NAME_EN";
+                return "Insert name";
+            case PLAYER_TO_STRING_1:
+                return ". Cash: ";
+            case PLAYER_TO_STRING_2:
+                return "Wins: ";
             case BOUGHT_PROPERTY:
-                return "BOUGHT_PROPERTY_EN";
+                return " buys ";
             case PAID_RENT:
-                return "PAID_RENT_EN";
+                return " paid rent.";
             case LANDED:
-                return "LANDED_EN";
+                return " lands on ";
             case START:
-                return "START_EN";
+                return "Start";
             case BURGER_SHOP:
-                return "BURGER_SHOP_EN";
+                return "Burger Shop";
             case PIZZERIA:
-                return "PIZZERIA_EN";
+                return "Pizzeria";
             case CHANCE:
-                return "CHANCE_EN";
+                return "Chance";
             case CANDY_SHOP:
-                return "CANDY_SHOP_EN";
+                return "Candy Shop";
             case ICE_CREAM_SHOP:
-                return "ICE_CREAM_SHOP_EN";
+                return "Ice Cream Shop";
             case JAIL:
-                return "JAIL_EN";
+                return "Jail";
             case MUSEUM:
-                return "MUSEUM_EN";
+                return "Museum";
             case LIBRARY:
-                return "LIBRARY_EN";
+                return "Library";
             case SKATE_PARK:
-                return "SKATE_PARK_EN";
+                return "Skate Park";
             case SWIMMING_POOL:
-                return "SWIMMING_POOL_EN";
+                return "Swimming Pool";
             case FREE_PARKING:
-                return "FREE_PARKING_EN";
+                return "Free Parking";
             case ARCADE:
-                return "ARCADE_EN";
+                return "Arcade";
             case CINEMA:
-                return "CINEMA_EN";
+                return "Cinema";
             case TOY_SHOP:
-                return "TOY_SHOP_EN";
+                return "Toy Shop";
             case PET_SHOP:
-                return "PET_SHOP_EN";
+                return "Pet Shop";
             case GO_TO_JAIL:
-                return "GO_TO_JAIL_EN";
+                return "Go To Jail";
             case BOWLING_ALLEY:
-                return "BOWLING_ALLEY_EN";
+                return "Bowling Alley";
             case ZOO:
-                return "ZOO_EN";
+                return "Zoo";
             case WATER_PARK:
-                return "WATER_PARK_EN";
+                return "Water Park";
             case BEACH_PROMENADE:
-                return "BEACH_PROMENADE_EN";
+                return "Beach Promenade";
             case OWNER:
-                return "OWNER_EN";
+                return "Owner";
             case END:
-                return "END_EN";
+                return " won!";
             case DEBUG_OUTPUT:
                 return "DEBUG_OUTPUT_EN";       // DO NOT CHANGE THIS LINE
             default:
@@ -73,63 +77,67 @@ public class Languages {
     static Language danish = index -> {
         switch(index) {
             case PLAYER_NUM:
-                return "PLAYER_NUM_DA";
+                return "Antal spillere? (2, 3, 4)";
             case PLAYER_ROLE:
-                return "PLAYER_ROLE_DA";
+                return "Vælg en rolle (Bil, Hund, Kat, Skib)";
             case PLAYER_NAME:
-                return "PLAYER_NAME_DA";
+                return "Indsæt Navn";
+            case PLAYER_TO_STRING_1:
+                return ". Penge: ";
+            case PLAYER_TO_STRING_2:
+                return "Sejre: ";
             case BOUGHT_PROPERTY:
-                return "BOUGHT_PROPERTY_DA";
+                return " køber ";
             case PAID_RENT:
-                return "PAID_RENT_DA";
+                return "Betalt Leje";
             case LANDED:
-                return "LANDED_DA";
+                return "Lander på";
             case START:
-                return "START_DA";
+                return "Start";
             case BURGER_SHOP:
-                return "BURGER_SHOP_DA";
+                return "Burgerbaren";
             case PIZZERIA:
-                return "PIZZERIA_DA";
+                return "Pizzeria";
             case CHANCE:
-                return "CHANCE_DA";
+                return "Chance";
             case CANDY_SHOP:
-                return "CANDY_SHOP_DA";
+                return "Slikbutikken";
             case ICE_CREAM_SHOP:
-                return "ICE_CREAM_SHOP_DA";
+                return "Isbutikken";
             case JAIL:
                 return "JAIL_DA";
             case MUSEUM:
-                return "MUSEUM_DA";
+                return "Museet";
             case LIBRARY:
-                return "LIBRARY_DA";
+                return "Biblioteket";
             case SKATE_PARK:
-                return "SKATE_PARK_DA";
+                return "Skaterparken";
             case SWIMMING_POOL:
-                return "SWIMMING_POOL_DA";
+                return "Svømmehallen";
             case FREE_PARKING:
-                return "FREE_PARKING_DA";
+                return "Gratis Parkering";
             case ARCADE:
-                return "ARCADE_DA";
+                return "Spillehallen";
             case CINEMA:
-                return "CINEMA_DA";
+                return "Biografen";
             case TOY_SHOP:
-                return "TOY_SHOP_DA";
+                return "Legetøjsbutikken";
             case PET_SHOP:
-                return "PET_SHOP_DA";
+                return "Dyrehandel";
             case GO_TO_JAIL:
-                return "GO_TO_JAIL_DA";
+                return "Gå i Fængsel";
             case BOWLING_ALLEY:
-                return "BOWLING_ALLEY_DA";
+                return "Bowlinghallen";
             case ZOO:
-                return "ZOO_DA";
+                return "Zoologisk Have";
             case WATER_PARK:
-                return "WATER_PARK_DA";
+                return "Vandlandet";
             case BEACH_PROMENADE:
-                return "BEACH_PROMENADE_DA";
+                return "Strandpromenaden";
             case OWNER:
-                return "OWNER_DA";
+                return "Ejer:";
             case END:
-                return "END_DA";
+                return " sejr!";
             case DEBUG_OUTPUT:
                 return "DEBUG_OUTPUT_DA";       // DO NOT CHANGE THIS LINE
             default:
