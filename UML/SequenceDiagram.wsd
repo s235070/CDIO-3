@@ -1,0 +1,24 @@
+@startuml SequenceDiagram
+    actor Players as Foo1
+    participant Game as Foo2
+    database record.txt as Foo3
+
+    Foo1 -> Foo2 : Start the game
+    Foo2 -> Foo3 : Reads save data
+    Foo1 <- Foo2 : Asks for language
+    Foo1 -> Foo2 : Reply with language
+    Foo1 <- Foo2 : Asks for number of players
+    Foo1 -> Foo2 : Reply with 2, 3 or 4
+    loop for each player
+        Foo1 <- Foo2 : Asks for role
+        Foo1 -> Foo2 : Replies with role
+        Foo1 <- Foo2 : Asks for name
+        Foo1 -> Foo2 : Replies with name
+    end
+    loop until bankruptcy
+        Foo1 <- Foo2 : Prints turn results
+        Foo1 -> Foo2 : Press enter
+    end
+    Foo1 <- Foo2 : Prints winner
+    Foo2 -> Foo3 : Records game
+@enduml
