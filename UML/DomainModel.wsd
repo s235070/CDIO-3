@@ -1,0 +1,16 @@
+@startuml DomainModel
+    [Dice] as O1
+    [Card] as O2
+    [Piece] as O3
+    [Money] as O4
+    [Board] as O5
+    :Player: as P
+
+    P"1" -r-> "1"O1 : Rolls
+    P"1" -l-> "1"O2 : Picks
+    P"1" -u-> "1"O3 : Moves
+    O3"1" -l-> "1"O5 : Lands on
+    O5"1" -d-> "1"P : Orders players' next moves
+    P"2" <-d-> "1..*"O4 : Gives to other player
+    P"1" -d-> "1..*"O4 : Loses money
+@enduml
