@@ -1,0 +1,14 @@
+@startuml UseCaseDiagram
+    (Select language) as UC1
+    (Run turn) as UC2
+    (Select name) as UC3
+    (Select role) as UC4
+    (Select number of players) as UC5
+    :Player: as P
+    
+    P"2..4" --> UC1
+    P"2..4" --> UC2
+    P"1" --> UC3
+    P"1" --> UC4
+    P"2..4" --> UC5
+@enduml
