@@ -44,31 +44,43 @@ package Languages.java {
         BOUGHT_PROPERTY
         PAID_RENT
         LANDED
+        NEXT_TURN
         START
         BURGER_SHOP
         PIZZERIA
-        CHANCE_ONE
+        CHANCE
         CANDY_SHOP
         ICE_CREAM_SHOP
         JAIL
         MUSEUM
         LIBRARY
-        CHANCE_TWO
         SKATE_PARK
         SWIMMING_POOL
         FREE_PARKING
         ARCADE
         CINEMA
-        CHANCE_THREE
         TOY_SHOP
         PET_SHOP
         GO_TO_JAIL
         BOWLING_ALLEY
         ZOO
-        CHANCE_FOUR
         WATER_PARK
         BEACH_PROMENADE
+        CARD
+        BACK_TO_START
+        MOVE_FIVE
+        FREE_ORANGE
+        MOVE_ONE
+        CANDY
+        FREE_BLUE
+        GET_OUT_OF_JAIL
+        GO_BEACH_PROMENADE
+        BIRTHDAY
+        HOMEWORK
+        FREE_RED
+        GO_SKATE_PARK
         OWNER
+        FOLLOWING_TURN
         END
         DEBUG_OUTPUT
         ALWAYS_OUT_OF_RANGE
@@ -89,15 +101,20 @@ package Player.java {
         - wins: int
         - position: int
         - role: Role
+        - imprisoned: boolean
+
         + Player(name: String, role: Role)
         + getName(): String
         + getWins(): int
         + getCash(): int
         + getPosition(): int
+        + getImprisonment(): boolean
+        + setImprisonment(): void
         + toString(): String
         + toStringFull(): String
         + wins(): void
         + move(move: int): void
+        + setPosition(x: int): void
         + addCash(cash: int): void
         + pay(cash: int, recipient: Player): void
     }
@@ -133,8 +150,14 @@ class PlayerController {
 }
 
 class RecordKeeper {
+    {static} - RECORD_FILE: String
+    {static} - playerWins: Map<String, Integer>
+
     {static} + getWins(player: Player): int
     {static} + recordGame(p1: Player, p2: Player): void
+    {static} + saveRecords(): void
+    {static} + updateRecord(player: Player): void
+    {static} + loadRecords(): void
 }
 
 package TileActivity.java {
@@ -210,15 +233,64 @@ class BoardUI {
     {static} + displayBoard(): void
 }
 
+package Chance.java {
+    class Chance {
+        {static} - backToStart: ChanceActivity
+        {static} - moveFive: ChanceActivity
+        {static} - freeOrange: ChanceActivity
+        {static} - moveOne: ChanceActivity
+        {static} - candy: ChanceActivity
+        {static} - freeBlue: ChanceActivity
+        {static} - getOutOfJail: ChanceActivity
+        {static} - goBeachPromenade: ChanceActivity
+        {static} - birthday: ChanceActivity
+        {static} - homework: ChanceActivity
+        {static} - freeRed: ChanceActivity
+        {static} - goSkatePark: ChanceActivity
+
+        {static} - cards: ChanceActivity[]
+        {static} + chance(): void
+    }
+
+    interface ChanceActivity <<@FunctionalInterface>> {
+        + chanceActivity(): void
+    }
+}
+
+package Deck {
+    class Deck {
+        {static} - deck: List<Card>
+
+        {static} + shuffle(): void
+        {static} + shift(): void
+        {static} + getCard(): Card 
+    }
+
+    enum Card {
+        BACK_TO_START
+        MOVE_FIVE
+        FREE_ORANGE
+        MOVE_ONE
+        CANDY
+        FREE_BLUE
+        GET_OUT_OF_JAIL
+        GO_BEACH_PROMENADE
+        BIRTHDAY
+        HOMEWORK
+        FREE_RED
+        GO_SKATE_PARK
+    }
+}
+
 Languages <-- MonopolyJunior
 Language --* Languages
-Languages -l- LanguageIndex
+Languages -r- LanguageIndex
 Languages -d-> LineReader
 MonopolyJunior --> PlayerController
 Languages <-- PlayerController
 LineReader <-- PlayerController
 PlayerController --> Player
-Player -l- Role
+Player -r- Role
 Player *-l- Account
 Turn <-- MonopolyJunior
 Turn -r- Tile
@@ -236,5 +308,13 @@ End -u-> Languages
 MonopolyJunior -r-> BoardUI
 BoardUI -u-> PlayerController
 BoardUI -u-> Languages
+MonopolyJunior -d-> RecordKeeper
+End -d-> RecordKeeper
+TileActivity -d-> Chance
+Chance -r-* ChanceActivity
+Chance -r-> Languages
+Chance -d-> PlayerController
+Chance -d-> Deck
+Deck -r- Card
 
 @enduml
