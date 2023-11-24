@@ -7,14 +7,18 @@ public class MonopolyJunior {
         Languages.selectLanguage();
         PlayerController.createPlayers();
         
-        do {
+        while(true) {
             BoardUI.displayBoard();
             PlayerController.updateCurrentPlayer();
             Turn.runTurn(PlayerController.getCurrentPlayer());
             System.out.println(Languages.getLanguage(LanguageIndex.NEXT_TURN));
             LineReader.nextLine();
-        } while(!Bankruptcy.getBankruptcy());
+            if(Bankruptcy.getBankruptcy()) { 
+                End.end();
+                break;
+            }
+            System.out.println("------------------------*" + Languages.getLanguage(LanguageIndex.FOLLOWING_TURN) + "*------------------------");
+        }
 
-        End.end();
     }
 }

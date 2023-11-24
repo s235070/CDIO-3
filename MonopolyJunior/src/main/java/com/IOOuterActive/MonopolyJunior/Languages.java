@@ -93,6 +93,8 @@ public class Languages {
                 return "You get skate park, if someone owns it you have to pay them rent.";
             case OWNER:
                 return "Owner";
+            case FOLLOWING_TURN:
+                return "Next Turn";
             case END:
                 return " won!";
             case DEBUG_OUTPUT:
@@ -192,6 +194,8 @@ public class Languages {
                 return "Du vandt skater park, dog hvis nogen ejer den, skal du betale husleje til ejeren.";
             case OWNER:
                 return "Ejer:";
+            case FOLLOWING_TURN:
+                return "Næste runde";
             case END:
                 return " sejr!";
             case DEBUG_OUTPUT:
@@ -281,6 +285,7 @@ enum LanguageIndex {
     GO_SKATE_PARK,
     //BoardUI.java
     OWNER,
+    FOLLOWING_TURN,
     //End.java
     END, // Shown when game ends
     //DEBUG INDICES DO NOT USE

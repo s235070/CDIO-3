@@ -3,7 +3,6 @@ package com.IOOuterActive.MonopolyJunior;
 public class BoardUI {
     public static void displayBoard() {
         Player[] players = PlayerController.getPlayers();
-        String divider = "------------------------*Next Turn*------------------------";
 
         // START
         System.out.println("[0:" + Languages.getLanguage(LanguageIndex.START) + "]");
@@ -13,7 +12,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // BURGER SHOP
@@ -29,7 +27,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
         
         // PIZZERIA
@@ -45,7 +42,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
         
         // CHANCE 1
@@ -56,7 +52,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // CANDY SHOP
@@ -72,7 +67,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // ICE CREAM SHOP
@@ -88,7 +82,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // JAIL
@@ -99,7 +92,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // MUSEUM
@@ -115,7 +107,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // LIBRARY
@@ -131,7 +122,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // CHANCE 2
@@ -142,7 +132,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
 
@@ -159,7 +148,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // SWIMMING POOL
@@ -175,7 +163,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
         
         // FREE PARK
@@ -186,7 +173,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
     
         // ARCADE
@@ -202,7 +188,6 @@ public class BoardUI {
                 System.out.print(players[i].getName() + " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // CINEMA
@@ -218,7 +203,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // CHANCE 3
@@ -229,7 +213,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // TOY SHOP
@@ -245,7 +228,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // PET SHOP
@@ -261,7 +243,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // GO TO JAIL
@@ -272,7 +253,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // BOWLING ALLEY
@@ -288,7 +268,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // ZOO
@@ -304,7 +283,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // CHANCE 4
@@ -315,7 +293,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // WATER PARK
@@ -331,7 +308,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
 
         // BEACH PROMENADE
@@ -347,7 +323,6 @@ public class BoardUI {
                 System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
-        System.out.println(divider);
         System.out.println();
     }
     
