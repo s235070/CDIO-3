@@ -1,0 +1,17 @@
+@startuml SystemSequenceDiagram
+    participant MonopolyJunior as Foo1
+    participant PlayerController as Foo2
+    participant BoardUI as Foo3
+    participant Turn as Foo4
+    participant End as Foo98
+    participant RecordKeeper as Foo99
+
+    Foo1 -> Foo99 : loadRecords()
+    Foo1 -> Foo2 : createPlayers()
+    loop until bankruptcy
+        Foo1 -> BoardUI : displayBoard()
+        Foo1 -> Turn : runTurn()
+    end
+    Foo1 -> Foo98 : end()
+    Foo98 -> Foo99 : recordGame()
+@enduml
