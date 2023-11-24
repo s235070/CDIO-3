@@ -86,22 +86,22 @@ class PlayerController {
             String line = LineReader.nextLine();
 
             switch(line) {
-                case "Car": case "car":
+                case "Car": case "car": case "Bil": case "bil": 
                     if (car == null) {
                         car = new Player(getName(), Role.CAR);
                         return car;
                     }
-                case "Ship": case "ship":
+                case "Ship": case "ship": case "Båd": case "båd":
                     if (ship == null) {
                         ship = new Player(getName(), Role.SHIP);
                         return ship;
                     }
-                case "Cat": case "cat":
+                case "Cat": case "cat": case "Kat": case "kat":
                     if (cat == null) {
                         cat = new Player(getName(), Role.CAR);
                         return cat;
-                    }
-                case "Dog": case "dog":
+                    }   
+                case "Dog": case "dog": case "Hund": case "hund":
                     if (dog == null) {
                         dog = new Player(getName(), Role.DOG);
                         return dog;

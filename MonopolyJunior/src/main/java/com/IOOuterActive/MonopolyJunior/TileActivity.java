@@ -4,27 +4,28 @@ public class TileActivity {
 
     static Activity start = tile -> {
         System.out.println(PlayerController.getCurrentPlayer().getName() + Languages.getLanguage(LanguageIndex.LANDED) + Languages.getLanguage(LanguageIndex.START));
-        return;
+        PlayerController.getCurrentPlayer().addCash(2);
     };
 
     static Activity jail = tile -> {
         System.out.println(PlayerController.getCurrentPlayer().getName() + Languages.getLanguage(LanguageIndex.LANDED) + Languages.getLanguage(LanguageIndex.JAIL));
-        return;
-    };
+    };    
     
     static Activity freeParking = tile -> {
         System.out.println(PlayerController.getCurrentPlayer().getName() + Languages.getLanguage(LanguageIndex.LANDED) + Languages.getLanguage(LanguageIndex.FREE_PARKING));
-        return;
     };
     
     static Activity goToJail = tile -> {
         System.out.println(PlayerController.getCurrentPlayer().getName() + Languages.getLanguage(LanguageIndex.LANDED) + Languages.getLanguage(LanguageIndex.GO_TO_JAIL));
-        return;
+        PlayerController.getCurrentPlayer().setPosition(6);
+        if(!PlayerController.getCurrentPlayer().getImprisonment()) {
+            PlayerController.getCurrentPlayer().addCash(-1);
+        }
     };
         
     static Activity chance = tile -> {
         System.out.println(PlayerController.getCurrentPlayer().getName() + Languages.getLanguage(LanguageIndex.LANDED) + Languages.getLanguage(LanguageIndex.CHANCE));
-        return;
+        Chance.chance();
     };
     
     static Activity burgerShop = tile -> {

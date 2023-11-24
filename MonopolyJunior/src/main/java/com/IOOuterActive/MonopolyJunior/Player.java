@@ -5,6 +5,7 @@ public class Player {
     Account account;
     int wins, position;
     Role role;
+    boolean imprisoned;
 
     public Player(String name, Role role) {
         this.name = name;
@@ -12,6 +13,11 @@ public class Player {
         this.position = 0;
         this.account = new Account();
         this.wins = RecordKeeper.getWins(this);
+        this.imprisoned = false;
+    }
+
+    public Role getRole() {
+        return this.role;
     }
 
     public String getName() {
@@ -30,12 +36,20 @@ public class Player {
         return this.position;
     }
 
+    public boolean getImprisonment() {
+        return this.imprisoned;
+    }
+
+    public void setImprisonment() {
+        this.imprisoned = !this.imprisoned;
+    }
+
     public String toString() {
         return this.name + Languages.getLanguage(LanguageIndex.PLAYER_TO_STRING_1) + this.getCash() + ".";
     }
 
     public String toStringFull() {
-        return this.name + Languages.getLanguage(LanguageIndex.PLAYER_TO_STRING_1) + this.getCash() + ". " + Languages.getLanguage(LanguageIndex.PLAYER_TO_STRING_2) + this.wins;
+        return this.name + Languages.getLanguage(LanguageIndex.PLAYER_TO_STRING_1) + this.getCash() + ". " + Languages.getLanguage(LanguageIndex.PLAYER_TO_STRING_2) + (this.wins + 1);
     }
 
     public void wins() {
@@ -54,6 +68,10 @@ public class Player {
 
     public boolean addCash(int cash) {
         return this.account.addCash(cash);
+    }
+
+    public void setPosition(int x) {
+        this.position = x;
     }
 
     public void pay(int cash, Player recipient) {

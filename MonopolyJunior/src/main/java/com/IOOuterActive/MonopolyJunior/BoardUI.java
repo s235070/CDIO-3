@@ -3,15 +3,17 @@ package com.IOOuterActive.MonopolyJunior;
 public class BoardUI {
     public static void displayBoard() {
         Player[] players = PlayerController.getPlayers();
+        String divider = "------------------------*Next Turn*------------------------";
 
         // START
         System.out.println("[0:" + Languages.getLanguage(LanguageIndex.START) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 0)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // BURGER SHOP
@@ -21,12 +23,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 1)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
         
         // PIZZERIA
@@ -36,22 +39,24 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 2)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
         
         // CHANCE 1
         System.out.println("[3:" + Languages.getLanguage(LanguageIndex.CHANCE) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 3)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // CANDY SHOP
@@ -61,12 +66,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 4)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // ICE CREAM SHOP
@@ -76,22 +82,24 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 5)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // JAIL
         System.out.println("[6:" + Languages.getLanguage(LanguageIndex.JAIL) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 6)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // MUSEUM
@@ -101,12 +109,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 7)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // LIBRARY
@@ -116,22 +125,24 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 8)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // CHANCE 2
         System.out.println("[9:" + Languages.getLanguage(LanguageIndex.CHANCE) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 9)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
 
@@ -142,12 +153,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 10)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // SWIMMING POOL
@@ -157,22 +169,24 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 11)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
         
         // FREE PARK
         System.out.println("[12:" + Languages.getLanguage(LanguageIndex.FREE_PARKING) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 12)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
     
         // ARCADE
@@ -182,12 +196,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 13)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName() + " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // CINEMA
@@ -197,22 +212,24 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 14)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // CHANCE 3
         System.out.println("[15:" + Languages.getLanguage(LanguageIndex.CHANCE) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 15)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // TOY SHOP
@@ -222,12 +239,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 16)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // PET SHOP
@@ -237,22 +255,24 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 17)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // GO TO JAIL
         System.out.println("[18:" + Languages.getLanguage(LanguageIndex.GO_TO_JAIL) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 18)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // BOWLING ALLEY
@@ -262,12 +282,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 19)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // ZOO
@@ -277,22 +298,24 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 20)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // CHANCE 4
         System.out.println("[21:" + Languages.getLanguage(LanguageIndex.CHANCE) + "]");
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 21)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // WATER PARK
@@ -302,12 +325,13 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 22)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
 
         // BEACH PROMENADE
@@ -317,15 +341,14 @@ public class BoardUI {
         } catch (NullPointerException e) {
             System.out.println("[" + Languages.getLanguage(LanguageIndex.OWNER) + ": none]");
         }
-        System.out.print("[");
+        System.out.print("[Players: ");
         for(int i = 0; i < players.length;i++){
             if(players[i].getPosition() == 23)
-                System.out.print(players[i].getName());
+                System.out.print(players[i].getName()+ " ");
         }
         System.out.println("]");
+        System.out.println(divider);
         System.out.println();
-
-
     }
     
 }

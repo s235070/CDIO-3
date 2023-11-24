@@ -7,6 +7,10 @@ public class Turn {
         Tile currentTile = Tile.values()[player.getPosition()];
 
         TileActivity.runTile(currentTile);
+
+        for (Player element : PlayerController.getPlayers()) {
+            System.out.println(element.toString());
+        }
     }
 }
 

@@ -1,75 +1,47 @@
 package com.IOOuterActive.MonopolyJunior;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RecordKeeper {
+    private static final String RECORD_FILE = "record.txt";
+    private static Map<String, Integer> playerWins = new HashMap<>();
+
+    public static void loadRecords() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(RECORD_FILE))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(",");
+                if (parts.length == 3) { 
+                    String key = parts[0] + "," + parts[1]; 
+                    int wins = Integer.parseInt(parts[2]);
+                    playerWins.put(key, wins);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Fejl ved indlæsning af rekorder: " + e.getMessage());
+        }
+    }
+
+    public static void updateRecord(Player player) {
+        String key = player.getRole().toString() + "," + player.getName();
+        int wins = playerWins.getOrDefault(key, 0) + 1;
+        playerWins.put(key, wins);
+    }
+
+    public static void saveRecords() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(RECORD_FILE))) {
+            for (Map.Entry<String, Integer> entry : playerWins.entrySet()) {
+                writer.write(entry.getKey() + "," + entry.getValue() + "\n");
+            }
+        } catch (IOException e) {
+            System.err.println("Fejl ved gemning af rekorder: " + e.getMessage());
+        }
+    }
+
     public static int getWins(Player player) {
-        int wins = 0;
-        try {
-            File file = new File("record.txt");
-            if (!file.exists()) {
-                return 0;
-            }
-    
-            Scanner scanner = new Scanner(file);
-    
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if (line.equals(player.getName())) {
-                    wins = Integer.parseInt(scanner.nextLine());
-                    break;
-                }
-            }
-            scanner.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    
-        return wins;
-    }    
-
-    public static void recordGame(Player p1, Player p2) {
-        try {
-            File file = new File("record.txt");
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-    
-            Scanner scanner = new Scanner(file);
-            StringBuilder updatedContent = new StringBuilder();
-            boolean foundP1 = false;
-            boolean foundP2 = false;
-    
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if (line.equals(p1.getName())) {
-                    updatedContent.append(p1.getName()).append("\n").append(p1.getWins()).append("\n");
-                    foundP1 = true;
-                } else if (line.equals(p2.getName())) {
-                    updatedContent.append(p2.getName()).append("\n").append(p2.getWins()).append("\n");
-                    foundP2 = true;
-                } else {
-                    updatedContent.append(line).append("\n");
-                }
-            }
-            scanner.close();
-    
-            if (!foundP1) {
-                updatedContent.append(p1.getName()).append("\n").append(p1.getWins()).append("\n");
-            }
-            if (!foundP2) {
-                updatedContent.append(p2.getName()).append("\n").append(p2.getWins()).append("\n");
-            }
-    
-            FileWriter fileWriter = new FileWriter("record.txt");
-            fileWriter.write(updatedContent.toString());
-            fileWriter.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }    
-
+        String key = player.getRole().toString() + "," + player.getName();
+        return playerWins.getOrDefault(key, 0);
+    }
 }

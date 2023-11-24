@@ -11,6 +11,8 @@ public class Languages {
                 return " Pick a role (Car, Dog, Cat, Ship)";
             case PLAYER_NAME:
                 return "Insert name";
+            case NEXT_TURN:
+                return "Press enter for the next turn...!";
             case PLAYER_TO_STRING_1:
                 return ". Cash: ";
             case PLAYER_TO_STRING_2:
@@ -63,6 +65,32 @@ public class Languages {
                 return "Water Park";
             case BEACH_PROMENADE:
                 return "Beach Promenade";
+            case CARD:
+                return "You picked a card: ";
+            case BACK_TO_START:
+                return "Move back to start.";
+            case MOVE_FIVE:
+                return "Move five tiles.";
+            case FREE_ORANGE:
+                return "You get an orange tile, if someone owns it you have to pay them rent.";
+            case MOVE_ONE:
+                return "Move one tile.";
+            case CANDY: 
+                return "You have eaten too much candy! Pay 2.";
+            case FREE_BLUE:
+                return "You get an blue tile, if someone owns it you have to pay them rent.";
+            case GET_OUT_OF_JAIL:
+                return "You can get out of jail, if are not in jail, save this for later use.";
+            case GO_BEACH_PROMENADE: 
+                return "Woohooo! You landed on the Beach Promenade.";
+            case BIRTHDAY:
+                return "Lucky u, you get 1 point from every player!";
+            case HOMEWORK:
+                return "Smart boy/girl/other, you wil get 2 point from the bank!";
+            case FREE_RED:
+                return "You get an Red tile, if someone owns it you have to pay them rent.";
+            case GO_SKATE_PARK:
+                return "You get skate park, if someone owns it you have to pay them rent.";
             case OWNER:
                 return "Owner";
             case END:
@@ -82,6 +110,8 @@ public class Languages {
                 return "Vælg en rolle (Bil, Hund, Kat, Skib)";
             case PLAYER_NAME:
                 return "Indsæt Navn";
+            case NEXT_TURN:
+                return "Tast enter for næste kast...";
             case PLAYER_TO_STRING_1:
                 return ". Penge: ";
             case PLAYER_TO_STRING_2:
@@ -134,6 +164,32 @@ public class Languages {
                 return "Vandlandet";
             case BEACH_PROMENADE:
                 return "Strandpromenaden";
+            case CARD:
+                return "Du trækker et kort: ";
+            case BACK_TO_START:
+                return "Ryk over til start.";
+            case MOVE_FIVE:
+                return "Ryk fem pladser.";
+            case FREE_ORANGE:
+                return "Du vandt en orange plads, dog hvis nogen ejer den, skal du betale husleje til ejeren.";
+            case MOVE_ONE:
+                return "Flyt din brik, en frem.";
+            case CANDY: 
+                return "Du har spist for meget slik! Betal 2.";
+            case FREE_BLUE:
+                return "Du vandt en blå plads, dog hvis nogen ejer den, skal du betale husleje til ejeren.";
+            case GET_OUT_OF_JAIL:
+                return "Du kan komme ud af fængslet, gem dette kort til nødvendige situationer.";
+            case GO_BEACH_PROMENADE: 
+                return "Woohooo! Du landet på Beach Promenade.";
+            case BIRTHDAY:
+                return "Se hvor heldig du er, Du modtager 1 point fra alle spillere!";
+            case HOMEWORK:
+                return "Du klog nok, du har lavet alle dine lektier, så du modtager 2 point!";
+            case FREE_RED:
+                return "Du vandt en rød plads, dog hvis nogen ejer den, skal du betale husleje til ejeren.";
+            case GO_SKATE_PARK:
+                return "Du vandt skater park, dog hvis nogen ejer den, skal du betale husleje til ejeren.";
             case OWNER:
                 return "Ejer:";
             case END:
@@ -185,6 +241,8 @@ enum LanguageIndex {
     BOUGHT_PROPERTY, // Printed when the player buys a property
     PAID_RENT, // Printed when player pays rent
     LANDED, // Printed when you land on a tile before the name of the tile
+    // Enter for next round called in monopolyjr.java
+    NEXT_TURN,
     // All of the following are the names of tiles each language
     START,
     BURGER_SHOP,
@@ -207,6 +265,20 @@ enum LanguageIndex {
     ZOO,
     WATER_PARK,
     BEACH_PROMENADE,
+    // Chance.java
+    CARD,
+    BACK_TO_START,
+    MOVE_FIVE,
+    FREE_ORANGE,
+    MOVE_ONE,
+    CANDY,
+    FREE_BLUE,
+    GET_OUT_OF_JAIL,
+    GO_BEACH_PROMENADE,
+    BIRTHDAY,
+    HOMEWORK,
+    FREE_RED,
+    GO_SKATE_PARK,
     //BoardUI.java
     OWNER,
     //End.java
