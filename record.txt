@@ -1,2 +1,0 @@
-DOG,dog,2
-CAR,cat,6
